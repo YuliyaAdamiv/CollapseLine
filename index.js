@@ -126,14 +126,12 @@ function calculateIntersection(startX, startY, mouseX, mouseY) {
   }
 
   // upper part of intersection point formula
-  var u1 = Math.abs(
+  var u1 =
     existingLines[0].startX * existingLines[0].endY -
-      existingLines[0].startY * existingLines[0].endX
-  ); // (x1 * y2 - y1 * x2)
-  var u4 = Math.abs(
+    existingLines[0].startY * existingLines[0].endX; // (x1 * y2 - y1 * x2)
+  var u4 =
     existingLines[1].startX * existingLines[1].endY -
-      existingLines[1].startY * existingLines[1].endX
-  ); // (x3 * y4 - y3 * x4)
+    existingLines[1].startY * existingLines[1].endX; // (x3 * y4 - y3 * x4)
   console.log(u1, u4);
 
   console.log(d);
@@ -169,3 +167,8 @@ function drawPoint(ctx, label, color, size) {
 const clearCanvas = () => {
   ctx.clearRect(0, 0, ctx.canvasWidth, ctx.canvasHeight);
 };
+// по алгоритму:
+//- зробити канвас
+//- додати логіку щоб малювалась лінія: при нажатті кнопки мишки починає будувати, при відтисканні, закінчує.
+//- всі лінії зберігаються
+//- …
